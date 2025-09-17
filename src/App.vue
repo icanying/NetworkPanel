@@ -13,6 +13,7 @@
           </div>
           <span class="title"> 网络面板 </span>
         </div>
+       </div>
     <el-main>
       <MainUI :isVisible="isVisible" />
       <br>
