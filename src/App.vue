@@ -13,14 +13,6 @@
           </div>
           <span class="title"> 网络面板 </span>
         </div>
-        <div style="float: right;margin-top: 5px;">
-          <el-button class="home" @click="aboutVisible=true" round>关于</el-button>
-        </div>
-        <div v-if="isAndroid" style="float: right;margin-top: 5px;margin-right: 5px;">
-          <el-button class="home" @click="downLoadAPPTableVisible=true" round>APP</el-button>
-        </div>
-      </div>
-    </el-header>
     <el-main>
       <MainUI :isVisible="isVisible" />
       <br>
@@ -28,15 +20,15 @@
     </el-main>
     <div style="height: fit-content;padding-bottom: 10px;">
       <div style="width: fit-content;margin-left: auto;margin-right: auto;">
-        <el-link type="info" @click='open("https://netart.cn/")' target="_blank">Whoami</el-link>&nbsp;
+        <el-link type="info" @click='open("https://netart.cn/")' target="_blank"></el-link>&nbsp;
         <el-link type="info" @click='open("https://github.com/ljxi/NetworkPanel")' target="_blank">源码</el-link>&nbsp;
         <el-link type="info" @click='open("https://github.com/ljxi/GeoCN")' target="_blank">IP离线库</el-link>
       </div>
       <div style="width: fit-content;margin-left: auto;margin-right: auto;">
         <span style="color:var(--el-color-info);font-size: 12px;">
           本工具由
-            <el-link style="vertical-align: -2px;" type="info" @click='open("https://edgeone.ai/zh?from=net.netart.cn")' target="_blank">
-              <img src="https://edgeone.ai/favicon.ico" alt="括彩CDN" width="15" height="15">
+            <el-link style="vertical-align: -2px;" type="info" @click='open("https://edgeone.ai/zh")' target="_blank">
+              <img src="https://edgeone.ai/favicon.ico" alt="腾讯" width="15" height="15">
               Tencent Edgeone
             </el-link>
           提供CDN服务
@@ -44,111 +36,6 @@
       </div>
     </div>
   </el-container>
-  <el-dialog align-center style="width: 90%;max-width: 700px;" v-model="downLoadAPPTableVisible" title="APP下载">
-    <div>
-      <el-button style="float:right;margin-top: -5px;" type="primary" @click="open('https://cdn.netart.cn/network-panel-app/v3.2.2.apk')">
-          下载最新版
-      </el-button> 
-      <h2>网络面板APP</h2>
-      <span>Java原生实现</span><br> 
-      <span>1.支持锁屏运行</span><br>
-      <span>2.支持添加任何链接</span><br>
-      <span>3.相对于浏览器更加省电</span><br>
-      <span>4.通知栏实时查看网络信息</span><br>
-    </div>
-    <div>
-      <h2>更新日志</h2>
-	  <div>
-        <h3>v3.2.2</h3>
-        <p>
-		  修复数据上报问题<br>
-        </p>
-      </div>
-	  <div>
-        <h3>v3.2.1</h3>
-        <p>
-          1.添加链接时可选“增强并发”开关(v2.7~v3.1此功能全局开启)<br>
-		  2.修复从通知栏退出后再打开总流量不清零问题<br>
-		  3.修复部分链接暂停之后再启动没有速度的问题<br>
-        </p>
-      </div>
-      <div>
-        <h3>v3.1.0</h3>
-        <p>
-          修复了部分情况下卡第一屏的问题<br>
-        </p>
-      </div>
-      <div>
-        <h3>v3.0.1</h3>
-        <p>
-          1.通知栏新增开始暂停退出按钮<br>
-          2.屏保模式新增电量显示<br>
-          再次提示：App可以锁屏运行，不建议使用屏保模式（更耗电）
-        </p>
-      </div>
-      <div>
-        <h3>v2.7.1</h3>
-        <p>
-          1.多线程速度优化<br>
-          2.全新的启动动画<br>
-          3.缓存首页资源文件，启动更快<br>
-        </p>
-      </div>
-      <div>
-        <h3>v2.6</h3>
-        <p>
-          1.修复了线程数设置错误的问题<br>
-          2.修复了运行一段时间后可能闪退的问题<br>
-          3.修复了部分模拟器闪退的问题<br>
-        </p>
-      </div>
-      <div>
-        <h3>v2.5</h3>
-        <p>
-          1.省电优化<br>
-          2.安装包体积优化<br>
-        </p>
-      </div>
-      <div>
-        <h3>v2.4</h3>
-        <p>
-          1.修复了大量的问题<br>
-        </p>
-      </div>
-      <div>
-        <h3>v2.3</h3>
-        <p>
-          1.新增上传测速功能<br>
-            (建议不超过2个线程)<br>
-        </p>
-      </div>
-      <div>
-        <h3>v2.2</h3>
-        <p>
-          1.修复了启动闪白屏的问题<br>
-          2.修复了打开后切换深色模式出现logo遮挡问题<br>
-          3.修复了暂停可能不及时的问题<br>
-          5.切换到okhttp请求库，提高性能与错误处理能力<br>
-          6.通知样式调整<br>
-          7.更省电<br>
-        </p>
-      </div>
-      <div>
-        <h3>v2.1</h3>
-        <p>
-        1.修复了2.0版本部分链接跑一会儿没速度的问题，修复了一个增加耗电的问题<br> 
-        2.核心功能完全由原生Java层接管，省电不发热的同时可以保后台，实测小米6黑屏后台运行12小时不掉<br> 
-        3.同步近期网页版更新内容<br> <br> 
-        保后台条件:<br> 
-        1.通知栏能够正常显示进度信息（如果没有看到通知，去设置检查通知权限）<br> 
-        2.加入电池优化白名单（如果没有加入，打开app会弹窗要求加入）<br> 
-        如果部分老旧机型打开白屏，请
-        <el-link @click="open('https://api.netart.cn/d?b013x2a3i')" type="primary">点此下载</el-link>
-        webview内核，并在开发者选项内启用该内核后重试
-        </p>
-      </div>
-    </div>
-  </el-dialog>
   <el-dialog style="width: 90%;max-width: 400px;" v-model="aboutVisible" title="关于">
     <div>
       <h2>网络面板</h2>
