@@ -20,10 +20,6 @@
       <br>
       <IPinfoUI :isVisible="isVisible" />
     </el-main>
-    <div style="height: fit-content;padding-bottom: 10px;">
-      <div style="width: fit-content;margin-left: auto;margin-right: auto;">
-      </div>
-    </div>
   </el-container>
   <el-dialog style="width: 90%;max-width: 400px;" v-model="aboutVisible" title="关于">
     <div>
