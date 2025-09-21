@@ -22,19 +22,6 @@
     </el-main>
     <div style="height: fit-content;padding-bottom: 10px;">
       <div style="width: fit-content;margin-left: auto;margin-right: auto;">
-        <el-link type="info" @click='open("https://netart.cn/")' target="_blank"></el-link>&nbsp;
-        <el-link type="info" @click='open("https://github.com/ljxi/NetworkPanel")' target="_blank">源码</el-link>&nbsp;
-        <el-link type="info" @click='open("https://github.com/ljxi/GeoCN")' target="_blank">IP离线库</el-link>
-      </div>
-      <div style="width: fit-content;margin-left: auto;margin-right: auto;">
-        <span style="color:var(--el-color-info);font-size: 12px;">
-          本工具由
-            <el-link style="vertical-align: -2px;" type="info" @click='open("https://edgeone.ai/zh")' target="_blank">
-              <img src="https://edgeone.ai/favicon.ico" alt="腾讯" width="15" height="15">
-              Tencent Edgeone
-            </el-link>
-          提供CDN服务
-        </span>
       </div>
     </div>
   </el-container>
